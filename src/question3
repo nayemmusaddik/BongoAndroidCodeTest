@@ -1,0 +1,31 @@
+    3.Write a video player application with ‘Play’, ‘Forward’ , ‘Rewind’ functionalities. Please
+    write pseudocode for this program and explain the design pattern you will use to develop
+    these three functionalities.
+        Ans:
+            This program performs ‘Play’, ‘Forward’ , ‘Rewind’ functionalities for a video player app.
+
+            declare the necessary variables
+
+
+            function onCreate(Bundle savedInstanceState) {
+                initialize the UI components and
+                initialize currentTime to zero.
+                declare onClick Listeners for the buttons
+            }
+            function play{
+                set the file path.
+                start playing the file
+            }
+            function forward{
+                    currentTime= currentTime+15
+                    play()
+            }
+            function rewind{
+                    currentTime= currentTime-15
+                    play()
+            }
+
+
+    I will be using decorator design pattern to build this entire application. Because the
+    decorator pattern attaches additional responsibilities to an object dynamically.
+    Decorators provide a flexible alternative to subclassing for extending functionality.

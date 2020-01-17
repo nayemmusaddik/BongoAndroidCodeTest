@@ -1,0 +1,48 @@
+    Explain the design pattern used in following:
+    interface Vehicle {
+        int set_num_of_wheels()
+        int set_num_of_passengers()
+        boolean has_gas()
+    }
+    a) Explain how can you use the pattern to create car and plane class?
+
+    Ans: As far I understand the factory design pattern is used here.To create a Car and a Plane class,we will
+    simply keep Vehicle class as a base class and implement the base class as needed in the Car and Plane class.
+    The key point of factory design pattern is we define a class type/interface then
+    we will have number of subclasses which implement the contract defined by the base class.
+
+   public class Car implements Vehicle{
+       @Override
+       public int set_num_of_wheels() {
+           return 4;
+       }
+
+       @Override
+       public int set_num_of_passengers() {
+           return 5;
+       }
+
+       @Override
+       public boolean has_gas() {
+           return true;
+       }
+   }
+
+    public class Plane implements Vehicle{
+           @Override
+           public int set_num_of_wheels() {
+               return 18;
+           }
+
+           @Override
+           public int set_num_of_passengers() {
+               return 416;
+           }
+
+           @Override
+           public boolean has_gas() {
+               return true;
+           }
+       }
+
+

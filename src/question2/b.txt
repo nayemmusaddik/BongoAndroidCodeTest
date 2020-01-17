@@ -1,0 +1,81 @@
+    b) Use a different design pattern for this solution.
+
+    Ans: Here I have used Facade Pattern.Its a structural design pattern.Facade Pattern describes a higher-level
+    interface that makes the sub-system easier to use.It is used when several dependencies exist between clients and
+    the implementation classes of an abstraction. It promotes loose coupling between subsystems and its clients.
+
+    public interface Vehicle {
+        int set_num_of_wheels();
+        int set_num_of_passengers();
+        boolean has_gas();
+
+    }
+
+    public class Car implements Vehicle{
+        @Override
+        public int set_num_of_wheels() {
+            return 4;
+        }
+
+        @Override
+        public int set_num_of_passengers() {
+            return 5;
+        }
+
+        @Override
+        public boolean has_gas() {
+            return true;
+        }
+    }
+
+    public class Plane implements Vehicle{
+        @Override
+        public int set_num_of_wheels() {
+            return 18;
+        }
+
+        @Override
+        public int set_num_of_passengers() {
+            return 416;
+        }
+
+        @Override
+        public boolean has_gas() {
+            return true;
+        }
+    }
+
+
+    public class VehicleMaker {
+        private Vehicle car;
+        private Vehicle plane;
+
+        public VehicleMaker() {
+            car = new Car();
+            plane =  new Plane();
+
+        }
+        public  void carInfo(){
+            System.out.println("Car Passengers: "+car.set_num_of_passengers());
+            System.out.println("Car Wheels: "+car.set_num_of_wheels());
+            System.out.println("Car Has Gas: "+car.has_gas());
+        }
+        public  void planeInfo(){
+            System.out.println("Plane Passengers: "+plane.set_num_of_passengers());
+            System.out.println("Plane Wheels: "+plane.set_num_of_wheels());
+            System.out.println("Plane Has Gas: "+plane.has_gas());
+        }
+    }
+
+    public class Main {
+        public static void main(String args[]){
+            VehicleMaker vm= new VehicleMaker();
+            vm.carInfo();
+            vm.planeInfo();
+
+        }
+    }
+
+
+
+
