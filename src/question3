@@ -7,7 +7,7 @@
             declare the necessary variables
 
 
-            function onCreate(Bundle savedInstanceState) {
+            function onCreate(Argument) {
                 initialize the UI components and
                 initialize currentTime to zero.
                 declare onClick Listeners for the buttons
